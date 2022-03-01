@@ -1,0 +1,66 @@
+﻿@model ContatoModel;
+@{
+    ViewData["Title"] = "Editar Contato";
+
+}
+<header class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-action="Index" asp-controller="Home">Controle de contatos</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-action="Index" asp-controller="Contato" aria-current="page">Contatos</a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-action="Cadastra" asp-controller="Contato">Cadastra</a>
+
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</header>
+
+<main class="  min-vh-100">
+    <div class="container text-center ">
+        <div class="d-flex align-items-start mt-3">
+            <a asp-action="Index" asp-controller="Contato" class="btn btn-outline-primary" role="button">Listar contatos</a>
+        </div>
+        <br>
+
+        <h1 class="h1 display-4  text-white">Editar contato</h1>
+
+
+        <form asp-action="Editar" class="text-start text-white-50">
+            <div class="mb-3">
+                <label for="nome" class="form-label ">Nome</label>
+                <input asp-for="Nome" type="text" class="form-control" id="nome" placeholder="Digiite o nome do contato" aria-describedby="nome">
+                @Html.ValidationMessageFor(x=>x.Nome)
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label ">Email</label>
+                <input asp-for="Email" type="email" class="form-control" placeholder="Digiite o email do contato" id="email">
+                @Html.ValidationMessageFor(x=>x.Email)
+            </div>
+            <div class="mb-3">
+                <label for="telefone" class="form-label">Telefone</label>
+                <input asp-for="Telefone" type="tel" class="form-control" placeholder="Digiite o telefone do contato" id="telefone">
+                @Html.ValidationMessageFor(x=>x.Telefone)
+
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 mb-3">Editar</button>
+            <a asp-action="Index" asp-controller="Contato" role="button" class="btn btn-secondary d-block">Voltar</a>
+        </form>
+    </div>
+
+</main>

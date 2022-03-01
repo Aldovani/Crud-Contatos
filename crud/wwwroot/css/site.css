@@ -1,0 +1,28 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.f-family-roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.input-validation-error {
+    border:2px solid red;
+}
+.field-validation-error {
+    color: #f67171;
+}
+
+.close-alert {
+    position: absolute;
+    right: -10px;
+    top: -15px;
+    border-radius: 15px;
+    width: 30px;
+    height: 31px;
+    background: var(--bs-red);
+}
